@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Maps extends CI_Controller {
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$data['judul'] = "Peta Kabupaten Lombok Tengah";
+		$this->load->view('index', $data);
 	}
 }
