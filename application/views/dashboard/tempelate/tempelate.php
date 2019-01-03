@@ -94,12 +94,10 @@
                     <a href="<?php echo base_url();?>dashboard" class="nav-link active"><i class="fe fe-home"></i> Home</a>
                   </li>
                   <li class="nav-item">
-                    <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i>Data</a>
-                    <div class="dropdown-menu dropdown-menu-arrow">
-                      <a href="<?php echo base_url();?>lokasi" class="dropdown-item ">Lokasi</a>
-                      <a href="<?php echo base_url();?>kategori" class="dropdown-item ">Kategori</a>
-                      <a href="#" class="dropdown-item ">Gambar</a>
-                    </div>
+                    <a href="<?php echo base_url();?>lokasi" class="nav-link"><i class="fe fe-layers"></i> Lokasi</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?php echo base_url();?>kategori" class="nav-link"><i class="fe fe-grid"></i> Kategori</a>
                   </li>
                   <li class="nav-item">
                   <a href="./cards.html" class="nav-link"> <i class="fe fe-settings"></i>Pengaturan</a>
@@ -133,5 +131,29 @@
         </div>
       </footer>
     </div>
+    <!-- Logout Delete Confirmation-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Data yang dihapus tidak akan bisa dikembalikan.</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <a id="btn-delete" class="btn btn-danger" href="#">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+    <script>
+    function deleteConfirm(url){
+      $('#btn-delete').attr('href', url);
+      $('#deleteModal').modal();
+    }
+    </script>
   </body>
 </html>

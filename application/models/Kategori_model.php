@@ -3,7 +3,7 @@
 class Kategori_model extends CI_Model{
     private $_table = "kategori";
 
-    public $idKategori;
+    public $idkategori;
     public $nama_kategori;
     public $icon;
     public $keterangan;
@@ -14,16 +14,6 @@ class Kategori_model extends CI_Model{
                     'field'=>'nama_kategori',
                     'label'=>'Nama Kategori',
                     'rules'=>'required'
-                ],
-                [
-                    'field'=>'icon',
-                    'label'=>'Icon',
-                    'rules'=>'required'
-                ],
-                [
-                    'field'=>'keterangan',
-                    'label'=>'Keterangan',
-                    'rules'=>'required'
                 ]
             ];
     }
@@ -33,12 +23,12 @@ class Kategori_model extends CI_Model{
     }
 
     public function getById($id){
-        return $this->db->get_where($this->_table, ["idKategori" => $id])->row();
+        return $this->db->get_where($this->_table, ["idkategori" => $id])->row();
     }
 
     public function saveData(){
         $post = $this->input->post();
-        $this->idKategori = uniqid();
+        $this->idkategori = uniqid();
         $this->nama_kategori = $post['nama_kategori'];
         $this->icon = $post['icon'];
         $this->keterangan = $post['keterangan'];
@@ -47,15 +37,15 @@ class Kategori_model extends CI_Model{
 
     public function updateData(){
         $post = $this->input->post();
-        $this->idKategori = $post['id'];
+        $this->idkategori = $post['id'];
         $this->nama_kategori = $post['nama_kategori'];
         $this->icon = $post['icon'];
         $this->keterangan = $post['keterangan'];
-        $this->db->update($this->_table, $this, array("idKategori" => $post['id']));
+        $this->db->update($this->_table, $this, array("idkategori" => $post['id']));
     }
 
-    public function deleteData(){
-        return $this->db->delete($this->_table, array("idKategori" => $id));
+    public function deleteData($id){
+        return $this->db->delete($this->_table, array("idkategori" => $id));
     }
 
 }

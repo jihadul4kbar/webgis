@@ -27,7 +27,9 @@
                                     <td><?php echo $kategori->nama_kategori;?></td>
                                     <td><?php echo $kategori->icon;?></td>
                                     <td><?php echo $kategori->keterangan;?></td>
-                                    <td><a href="#" class="btn btn-sm btn-blue"><i class="fe fe-edit"></i> </a> <a href="#" class="btn btn-sm btn-danger"><i class="fe fe-trash"></i></a> </td>
+                                    <td><a href="<?php echo site_url('kategori/edit/'.$kategori->idkategori) ?>" class="btn btn-sm btn-blue"><i class="fe fe-edit"></i> </a> 
+                                        <a onclick="deleteConfirm('<?php echo site_url('kategori/delete/'.$kategori->idkategori)?>')" href="#!" class="btn btn-sm btn-danger"><i class="fe fe-trash"></i></a> 
+                                    </td>
                                 </tr>
                             <?php  } ?>
                             </tbody>
@@ -38,3 +40,5 @@
         </div>
     </div>
 </div>
+
+
