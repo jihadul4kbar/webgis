@@ -23,8 +23,6 @@
                             </thead>
                             <tbody>
                             <?php $no=1; foreach ($lokasi_data as $lokasi) { ?>
-                                
-                            
                                 <tr>
                                     <td><?php echo $no++;?></td>
                                     <td><?php echo $lokasi->nama;?></td>

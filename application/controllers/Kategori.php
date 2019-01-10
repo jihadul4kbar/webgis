@@ -20,6 +20,7 @@ class Kategori extends CI_Controller {
 		if($validation->run()){
 			$kategori->saveData();
 			$this->session->set_flashdata('massage', ' Data Berhasil Disimpan');
+			redirect('kategori');
 		}
 		$data = array(
 			'judul' => "Add Data Kategori | Web GIS Kabupaten Lombok Tengah",

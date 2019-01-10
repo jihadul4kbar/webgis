@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 06 Des 2018 pada 09.08
--- Versi Server: 10.1.28-MariaDB
--- PHP Version: 5.6.32
+-- Generation Time: Jan 10, 2019 at 09:47 AM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 5.6.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `album`
+-- Table structure for table `album`
 --
 
 CREATE TABLE `album` (
@@ -37,7 +37,7 @@ CREATE TABLE `album` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `gambar`
+-- Table structure for table `gambar`
 --
 
 CREATE TABLE `gambar` (
@@ -50,20 +50,27 @@ CREATE TABLE `gambar` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `katagori`
+-- Table structure for table `kategori`
 --
 
-CREATE TABLE `katagori` (
-  `idkatagori` int(5) NOT NULL,
-  `nama_katagori` text NOT NULL,
-  `icon` varchar(15) NOT NULL,
+CREATE TABLE `kategori` (
+  `idkategori` varchar(10) NOT NULL,
+  `nama_kategori` text NOT NULL,
+  `icon` text NOT NULL,
   `keterangan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kategori`
+--
+
+INSERT INTO `kategori` (`idkategori`, `nama_kategori`, `icon`, `keterangan`) VALUES
+('5c3700e8bb', 'Toko', 'default.png', 'Toko');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `lokasi`
+-- Table structure for table `lokasi`
 --
 
 CREATE TABLE `lokasi` (
@@ -80,7 +87,7 @@ CREATE TABLE `lokasi` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengaturan`
+-- Table structure for table `pengaturan`
 --
 
 CREATE TABLE `pengaturan` (
@@ -112,10 +119,10 @@ ALTER TABLE `gambar`
   ADD PRIMARY KEY (`idgambar`);
 
 --
--- Indexes for table `katagori`
+-- Indexes for table `kategori`
 --
-ALTER TABLE `katagori`
-  ADD PRIMARY KEY (`idkatagori`);
+ALTER TABLE `kategori`
+  ADD PRIMARY KEY (`idkategori`);
 
 --
 -- Indexes for table `lokasi`
@@ -144,12 +151,6 @@ ALTER TABLE `album`
 --
 ALTER TABLE `gambar`
   MODIFY `idgambar` int(5) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `katagori`
---
-ALTER TABLE `katagori`
-  MODIFY `idkatagori` int(5) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `lokasi`
