@@ -102,7 +102,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	//##############################################//
 	var map = L.map('map', {
 		center: [-8.7002, 116.3535],
-		zoom: 11,
+		zoom: 10,
 		layers: [streets]
 	});
 

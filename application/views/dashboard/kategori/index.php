@@ -6,7 +6,7 @@
                     <div class="card-header">
                         <h3 class="card-title">Katagori Lokasi </h3>  
                     </div>
-                    <a href="<?php echo base_url();?>Kategori/addData" class="btn btn-square btn-primary">Add Data</a>
+                    <a href="<?php echo base_url();?>Kategori/add" class="btn btn-square btn-primary">Add Data</a>
                     <div class="card-body">
                         <table class="table table-bordered">
                             <thead>
@@ -25,7 +25,7 @@
                                 <tr>
                                     <td><?php echo $no++;?></td>
                                     <td><?php echo $kategori->nama_kategori;?></td>
-                                    <td><?php echo $kategori->icon;?></td>
+                                    <td><img src="<?php echo base_url('assets/upload/icon/'.$kategori->icon);?>" width="34px" alt="Icon Lokasi"></td>
                                     <td><?php echo $kategori->keterangan;?></td>
                                     <td><a href="<?php echo site_url('kategori/edit/'.$kategori->idkategori) ?>" class="btn btn-sm btn-blue"><i class="fe fe-edit"></i> </a> 
                                         <a onclick="deleteConfirm('<?php echo site_url('kategori/delete/'.$kategori->idkategori)?>')" href="#!" class="btn btn-sm btn-danger"><i class="fe fe-trash"></i></a> 

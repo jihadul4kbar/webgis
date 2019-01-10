@@ -13,7 +13,7 @@
                   </div>
                   <div class="card-body">
                   <div class="o-hidden">
-                    <form action="<?php echo base_url();?>Kategori/addData" method="POST">
+                    <form action="<?php echo base_url();?>Kategori/add" method="post" enctype="multipart/form-data">
                      <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Nama Katagori *</label>
                             <div class="col-sm-12">

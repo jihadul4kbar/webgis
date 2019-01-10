@@ -12,7 +12,7 @@ class Kategori extends CI_Controller {
 		$this->load->view('dashboard/tempelate/tempelate', $data);
 	}
 
-	function addData(){
+	function add(){
 		$kategori = $this->Kategori_model;
 		$validation = $this->form_validation;
 		$validation->set_rules($kategori->rules());
@@ -32,21 +32,19 @@ class Kategori extends CI_Controller {
     {
         if (!isset($id)) redirect('kategori');
        
-        $kategori = $this->Kategori_model;
+        $kategoris = $this->Kategori_model;
         $validation = $this->form_validation;
-        $validation->set_rules($kategori->rules());
+        $validation->set_rules($kategoris->rules());
 
         if ($validation->run()) {
-            $kategori->update();
+            $kategoris->update();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
         }
 
-        $data["kategori"] = $kategori->getById($id);
+		$data["kategori"] = $kategoris->getById($id);
+		$data["judul"] = "Edit Data Kategori | Web GIS Kabupaten Lombok Tengah";
         if (!$data["kategori"]) show_404();
-        $data = array(
-			'judul' => "Add Data Kategori | Web GIS Kabupaten Lombok Tengah",
-			'page' => "dashboard/kategori/edit",
-		);
+        $data["page"] = "dashboard/kategori/edit";
 		$this->load->view('dashboard/tempelate/tempelate', $data);
 	}
 	

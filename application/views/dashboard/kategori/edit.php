@@ -13,8 +13,8 @@
                   </div>
                   <div class="card-body">
                   <div class="o-hidden">
-                    <form action="<?php echo base_url();?>Kategori/addData" method="POST">
-                    <input type="hidden" name="id" value="<?php echo $kategori->idkategori?>" />
+                    <form action="<?php echo base_url();?>Kategori/edit" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="idkategori" value="<?php echo $kategori->idkategori;?>" />
                      <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Nama Katagori *</label>
                             <div class="col-sm-12">
@@ -29,7 +29,8 @@
                         <label class="col-sm-2 col-form-label">Icon * </label>
                             <div class="col-sm-12">
                             <!-- <input type="file" name="icon"> -->
-                            <input type="file" class="<?php echo form_error('icon') ? 'is-invalid':'' ?>" name="icon" value="<?php echo $kategori->icon ?>">
+                            <input type="file" class="<?php echo form_error('icon') ? 'is-invalid':'' ?>" name="icon">
+                            <input type="hidden" name="old_icon" value="<?php echo $kategori->icon ?>">
                             <div class="invalid-feedback">
 									<?php echo form_error('icon') ?>
 							</div>
@@ -38,7 +39,7 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Keterangan</label>
                             <div class="col-sm-12">
-                            <textarea class="form-control" name="keterangan">value="<?php echo $kategori->keterangan ?>"</textarea>
+                            <textarea class="form-control" name="keterangan"><?php echo $kategori->keterangan ?></textarea>
                             <div class="invalid-feedback">
 									<?php echo form_error('keterangan') ?>
 							</div>
