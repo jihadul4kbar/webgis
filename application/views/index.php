@@ -46,12 +46,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	//##############################################//
 	// Membuat Icon Pada Peta 
 	//##############################################//
+	var urlBase = "<?php echo base_url();?>";
+	//alert(urlBase);
 	var mapIcon = L.Icon.extend({
 	    iconSize:     [32, 37]
 	});
-	var masjidIcon = new mapIcon({iconUrl: 'icon/mosquee.png'}),
-	    pasarIcon = new mapIcon({iconUrl: 'icon/market.png'}),
-	    sekolahIcon = new mapIcon({iconUrl: 'icon/school.png'});
+	var masjidIcon = new mapIcon({iconUrl: '<?php echo base_url();?>assets/src/icon/mosquee.png'}),
+	    pasarIcon = new mapIcon({iconUrl: '<?php echo base_url();?>assets/src/icon/market.png'}),
+	    sekolahIcon = new mapIcon({iconUrl: '<?php echo base_url();?>assets/src/icon/school.png'});
 
 	//##############################################//
 	// Mendeklarasikan Marker Masjid dan membuatnya menjadi 
