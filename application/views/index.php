@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="<?php echo base_url();?>">
-      <img src="<?php echo base_url();?>assets/img/logo.png" width="40" height="160"> KABUPATEN LOMBOK TENGAH
+      <img src="<?php echo base_url();?>assets/img/logo.png" width="30" height="160"> KABUPATEN LOMBOK TENGAH
     </a>
 
     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
